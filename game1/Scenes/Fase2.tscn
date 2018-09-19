@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Tilesets/DirtAutotile.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+
+[node name="Node" type="Node"]
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 327680, 0, 1, 327681, 0, 2, 393216, 0, 131073, 393217, 0, 65539, 393218, 0, 2, 458752, 0, 131073, 458753, 0, 196619, 458754, 0, 65539, 458755, 0, 2, 524288, 0, 131073, 524289, 0, 196619, 524290, 0, 196619, 524291, 0, 65539, 524292, 0, 2, 589824, 0, 131073, 589825, 0, 196619, 589826, 0, 196619, 589827, 0, 196619, 589828, 0, 65539, 589829, 0, 2, 655360, 0, 131073, 655361, 0, 196619, 655362, 0, 196619, 655363, 0, 196619, 655364, 0, 196619, 655365, 0, 65539, 655366, 0, 2, 720896, 0, 65537, 720897, 0, 131072, 720898, 0, 131072, 720899, 0, 131072, 720900, 0, 131072, 720901, 0, 131072, 720902, 0, 65538 )
+
+[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
+
+
+[editable path="Player"]
