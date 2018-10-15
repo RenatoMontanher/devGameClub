@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/perna da trás.png-629a930ef186a75e51ec052921de76d1.stex"
+
+[deps]
+
+source_file="res://Player/new_player/perna da trás.png"
+source_md5="7e547d3a467478e5e3a4c8f629882077"
+
+dest_files=[ "res://.import/perna da trás.png-629a930ef186a75e51ec052921de76d1.stex" ]
+dest_md5="991814ace9b8eed94025e5960c7ac821"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

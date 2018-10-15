@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Plataforma.png-41c4fb2632a3b6caea76ebaa0d8b32dd.stex"
+
+[deps]
+
+source_file="res://Elementos do cenário/Plataforma/Plataforma.png"
+source_md5="1b7ec1c865ad9208bb84273ed1cf501b"
+
+dest_files=[ "res://.import/Plataforma.png-41c4fb2632a3b6caea76ebaa0d8b32dd.stex" ]
+dest_md5="4f3fc6d999631ca1a9619c0887e49415"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

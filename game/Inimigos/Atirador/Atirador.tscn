@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Inimigos/Atirador/Atirador.gd" type="Script" id=1]
+[ext_resource path="res://sprites/icon.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10.9459 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Atirador" type="KinematicBody2D"]
+
+position = Vector2( 2185.73, 538.48 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+ataque = 10
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+modulate = Color( 0.217678, 0.675781, 0.0712738, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 0.0699286, 0.739697 )
+scale = Vector2( 2.99198, 2.76958 )
+shape = SubResource( 1 )
+
+[node name="Hitbox" type="Area2D" parent="." index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
+
+position = Vector2( 0.172352, 0.383052 )
+scale = Vector2( 2.92896, 2.82459 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
+
+

@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/LifeHeart.png-25b60988e0096edd05e33cf46b655ef0.stex"
+
+[deps]
+
+source_file="res://Elementos do cenário/LifeHeart/LifeHeart.png"
+source_md5="af80b3c710ac4a670b541f066e13f0d4"
+
+dest_files=[ "res://.import/LifeHeart.png-25b60988e0096edd05e33cf46b655ef0.stex" ]
+dest_md5="b82c855ae24cf7414bc927e70819e99c"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

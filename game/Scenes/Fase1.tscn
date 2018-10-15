@@ -1,0 +1,172 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scripts/Portal.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/icon.png" type="Texture" id=2]
+[ext_resource path="res://Elementos do cenário/Tilesets/DirtAutotile.tres" type="TileSet" id=3]
+[ext_resource path="res://Inimigos/Atirador/Atirador.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Elementos do cenário/Plataforma/Plataforma.gd" type="Script" id=6]
+[ext_resource path="res://Elementos do cenário/Plataforma/Plataforma.png" type="Texture" id=7]
+[ext_resource path="res://Elementos do cenário/LifeHeart/LifeHeart.gd" type="Script" id=8]
+[ext_resource path="res://Elementos do cenário/LifeHeart/LifeHeart.png" type="Texture" id=9]
+[ext_resource path="res://Inimigos/INIMIGOIA/INIMIGO.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Elementos do cenário/Land Mine/Land Mine.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Inimigos/Voador/Voador.tscn" type="PackedScene" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 21.5609, 10 )
+
+[sub_resource type="CapsuleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 10.0
+height = 20.0
+
+[node name="Control" type="Node" index="0"]
+
+[node name="Portal" type="Area2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 2433.15, 539.479 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Portal" index="0"]
+
+modulate = Color( 0.742188, 0.101471, 0.101471, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" index="1"]
+
+position = Vector2( -0.555704, -0.368184 )
+scale = Vector2( 3.01317, 3.08088 )
+shape = SubResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 37, 0, 1, 38, 0, 2, 65573, 0, 131073, 65574, 0, 131074, 131109, 0, 131073, 131110, 0, 131074, 262142, 0, 1, 262143, 0, 65536, 196608, 0, 65536, 196609, 0, 65536, 196610, 0, 65536, 196611, 0, 65536, 196612, 0, 65536, 196613, 0, 65536, 196614, 0, 2, 196625, 0, 196608, 196626, 0, 10, 196627, 0, 65536, 196628, 0, 65536, 196629, 0, 65536, 196630, 0, 65536, 196631, 0, 65536, 196632, 0, 65536, 196633, 0, 65536, 196634, 0, 65536, 196635, 0, 65536, 196636, 0, 65536, 196637, 0, 65536, 196638, 0, 65536, 196639, 0, 65536, 196640, 0, 65536, 196641, 0, 65536, 196642, 0, 65536, 196643, 0, 65536, 196644, 0, 65536, 196645, 0, 65540, 196646, 0, 131074, 327678, 0, 65537, 327679, 0, 131072, 262144, 0, 131072, 262145, 0, 131072, 262146, 0, 131072, 262147, 0, 131072, 262148, 0, 131072, 262149, 0, 131072, 262150, 0, 131079, 262151, 0, 2, 262162, 0, 65537, 262163, 0, 131072, 262164, 0, 131072, 262165, 0, 131072, 262166, 0, 131072, 262167, 0, 131072, 262168, 0, 131072, 262169, 0, 131072, 262170, 0, 131072, 262171, 0, 131072, 262172, 0, 131072, 262173, 0, 131072, 262174, 0, 131072, 262175, 0, 131072, 262176, 0, 131072, 262177, 0, 131072, 262178, 0, 131072, 262179, 0, 131072, 262180, 0, 131072, 262181, 0, 131072, 262182, 0, 65538, 327686, 0, 65537, 327687, 0, 131079, 327688, 0, 2, 393223, 0, 65537, 393224, 0, 131079, 393225, 0, 2, 458760, 0, 65537, 458761, 0, 131079, 458762, 0, 2, 524297, 0, 65537, 524298, 0, 131079, 524299, 0, 2, 589834, 0, 131073, 589835, 0, 65539, 589836, 0, 65536, 589837, 0, 65536, 589838, 0, 65536, 589839, 0, 65536, 589840, 0, 65536, 589841, 0, 65536, 589842, 0, 65536, 589843, 0, 65536, 589844, 0, 65536, 589845, 0, 65536, 589846, 0, 65536, 589847, 0, 65536, 589848, 0, 65536, 589849, 0, 65536, 589850, 0, 65536, 589851, 0, 65536, 589852, 0, 65536, 589853, 0, 65536, 589854, 0, 65536, 589855, 0, 65536, 589856, 0, 65536, 589857, 0, 65536, 589858, 0, 65536, 589859, 0, 65536, 589860, 0, 65536, 589861, 0, 65536, 589862, 0, 2, 655370, 0, 65537, 655371, 0, 131072, 655372, 0, 131072, 655373, 0, 131072, 655374, 0, 131072, 655375, 0, 131072, 655376, 0, 131072, 655377, 0, 131072, 655378, 0, 131072, 655379, 0, 131072, 655380, 0, 131072, 655381, 0, 131072, 655382, 0, 131072, 655383, 0, 131072, 655384, 0, 131072, 655385, 0, 131072, 655386, 0, 131072, 655387, 0, 131072, 655388, 0, 131072, 655389, 0, 131072, 655390, 0, 131072, 655391, 0, 131072, 655392, 0, 131072, 655393, 0, 131072, 655394, 0, 131072, 655395, 0, 131072, 655396, 0, 131072, 655397, 0, 131072, 655398, 0, 65538 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Atirador" parent="." index="2" groups=[
+"inimigos",
+] instance=ExtResource( 4 )]
+
+[node name="Player" parent="." index="3" instance=ExtResource( 5 )]
+
+editor/display_folded = true
+position = Vector2( -32.3062, 159.804 )
+
+[node name="Plataforma" type="KinematicBody2D" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( 992, 224 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="Plataforma" index="0"]
+
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma" index="1"]
+
+position = Vector2( 0.61056, 0.567459 )
+scale = Vector2( 4.15251, 3.1453 )
+shape = SubResource( 2 )
+
+[node name="LifeHeart" type="Area2D" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 2304, 160 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="LifeHeart" index="0"]
+
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LifeHeart" index="1"]
+
+position = Vector2( -0.623836, 0 )
+scale = Vector2( 2.2181, 1 )
+shape = SubResource( 3 )
+
+[node name="INIMIGOIA" parent="." index="6" instance=ExtResource( 10 )]
+
+position = Vector2( 431.82, 157.395 )
+
+[node name="Land Mine" parent="." index="7" instance=ExtResource( 11 )]
+
+position = Vector2( 909.229, 567.729 )
+
+[node name="Olho" parent="." index="8" groups=[
+"inimigos",
+] instance=ExtResource( 12 )]
+
+position = Vector2( -206.989, -59.7082 )
+scale = Vector2( 0.09, 0.09 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="vivo" from="Player" to="Olho" method="_on_Player_vivo"]
+
+[connection signal="vivo" from="Player" to="Atirador" method="_on_Player_vivo"]
+
+[connection signal="vivo" from="Player" to="INIMIGOIA" method="_on_Player_vivo"]
+
+[connection signal="atualizar_vida" from="LifeHeart" to="Player" method="_on_LifeHeart_atualizar_vida"]
+
+[connection signal="body_entered" from="LifeHeart" to="LifeHeart" method="_on_LifeHeart_body_entered"]
+
+
+[editable path="Player"]
