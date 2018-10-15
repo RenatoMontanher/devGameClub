@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://menu/themegame.theme" type="Theme" id=1]
 [ext_resource path="res://menu/StartMenu.gd" type="Script" id=2]
-[ext_resource path="res://menu/menuBg.png" type="Texture" id=3]
+[ext_resource path="res://telaInicial/sprites/canario.png" type="Texture" id=3]
+[ext_resource path="res://telaInicial/sprites/mao .png" type="Texture" id=4]
+[ext_resource path="res://effects/Fumaça shader.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ShaderMaterial" id=1]
 
@@ -80,7 +82,8 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+stretch_mode = 0
+_sections_unfolded = [ "Grow Direction", "Rect" ]
 
 [node name="START" type="Button" parent="TextureRect" index="0"]
 
@@ -212,6 +215,21 @@ text = "2018 PROGRAMATION CLUB©"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="canario" type="Sprite" parent="." index="2"]
+
+position = Vector2( 712.242, 391.081 )
+scale = Vector2( 1.10127, 1.10127 )
+z_index = -1
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="mao" type="Sprite" parent="canario" index="0"]
+
+position = Vector2( -392.517, 53.7462 )
+texture = ExtResource( 4 )
+
+[node name="Fumaça shader" parent="." index="3" instance=ExtResource( 5 )]
 
 [connection signal="pressed" from="TextureRect/START" to="." method="_on_START_pressed"]
 
